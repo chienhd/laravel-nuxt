@@ -40,12 +40,13 @@ services:
 
   php:
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile
     container_name: php
     volumes:
       - ./backend:/var/www/html
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+    command: sh -c "composer install --ignore-platform-reqs && npm install && php artisan key:generate"
     ports:
       - "9000:9000"
     networks:
