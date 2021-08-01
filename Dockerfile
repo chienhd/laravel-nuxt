@@ -1,7 +1,6 @@
 #example: https://www.cloudsigma.com/deploying-laravel-nginx-and-mysql-with-docker-compose/
 FROM php:7.4-fpm
 
-COPY ./backend/composer.json ./backend/composer.lock /var/www/html/
 # Set working directory
 WORKDIR /var/www/html/
 
